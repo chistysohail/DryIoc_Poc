@@ -22,13 +22,13 @@ Code Snippets
 Here's a quick look at our main players:
 
 IService (Role):
-
 public interface IService
 {
     void Serve();
 }
-Service (Player):
 
+
+Service (Player):
 public class Service : IService
 {
     public void Serve()
@@ -36,11 +36,10 @@ public class Service : IService
         Console.WriteLine("Service Called");
     }
 }
-Program.cs (The Game Plan):
 
+Program.cs (The Game Plan):
 using DryIoc;
 using System;
-
 namespace DryIocExample
 {
     class Program
@@ -55,6 +54,8 @@ namespace DryIocExample
         }
     }
 }
+
+
 Running the Application
 To get the game going, simply run:
 dotnet run
