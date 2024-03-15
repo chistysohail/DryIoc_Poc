@@ -21,13 +21,9 @@ The Game (Running the Program): When we run our program, DryIoc ensures our Serv
 Code Snippets
 Here's a quick look at our main players:
 
-using DryIoc;
-using System;
-using System.ComponentModel;
-
 namespace DryIocExample
 {
-    public interface IService ///IService (Role):
+    public interface IService    //IService (Role):
     {
         void Serve();
     }
