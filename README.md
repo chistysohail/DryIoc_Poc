@@ -21,32 +21,30 @@ The Game (Running the Program): When we run our program, DryIoc ensures our Serv
 Code Snippets
 Here's a quick look at our main players:
 
-IService (Role):
-public interface IService
-{
-    void Serve();
-}
-
-
-Service (Player):
-public class Service : IService
-{
-    public void Serve()
-    {
-        Console.WriteLine("Service Called");
-    }
-}
-
-Program.cs (The Game Plan):
 using DryIoc;
 using System;
+using System.ComponentModel;
+
 namespace DryIocExample
 {
-    class Program
+    public interface IService ///IService (Role):
+    {
+        void Serve();
+    }
+
+    public class Service : IService    //Service (Player)
+    {
+        public void Serve()
+        {
+            Console.WriteLine("Service Called");
+        }
+    }
+
+    class Program //(The Game Plan)
     {
         static void Main(string[] args)
         {
-            var container = new Container();
+            var container = new DryIoc.Container();
             container.Register<IService, Service>();
 
             var service = container.Resolve<IService>();
@@ -54,6 +52,10 @@ namespace DryIocExample
         }
     }
 }
+
+
+//dotnet add package DryIoc.dll
+
 
 
 Running the Application
